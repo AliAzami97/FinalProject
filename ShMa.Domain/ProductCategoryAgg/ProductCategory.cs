@@ -2,7 +2,7 @@
 
 namespace ShMa.Domain.ProductCategoryAgg
 {
-    public class ProductCategoryDomain : EntityBase
+    public class ProductCategory : EntityBase
     {
         public string Name { get; private set; }
         public string Description { get; private set; }
@@ -13,7 +13,7 @@ namespace ShMa.Domain.ProductCategoryAgg
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
 
-        public ProductCategoryDomain(string name, string description, string image, string imageTitle, string imageAlt, string keyWord, string metaDescription, string slug)
+        public ProductCategory(string name, string description, string image, string imageTitle, string imageAlt, string keyWord, string metaDescription, string slug)
         {
             Name = name;
             Description = description;

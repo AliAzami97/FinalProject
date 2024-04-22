@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShMa.Application.Contracts\ShMa.Application.Contracts.csproj" />
+    <ProjectReference Include="..\ShMa.Domain\ShMa.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

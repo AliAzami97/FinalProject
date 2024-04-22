@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FrameWork\FrameWork.csproj" />
+    <ProjectReference Include="..\ShMa.Application.Contracts\ShMa.Application.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

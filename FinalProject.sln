@@ -5,21 +5,25 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShopManagement", "ShopManagement", "{43181434-05AF-4FC8-9FDC-D5D42AA16DB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork", "FrameWork\FrameWork.csproj", "{27C8C236-2607-4237-AC00-B657750F783C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameWork", "FrameWork\FrameWork.csproj", "{27C8C236-2607-4237-AC00-B657750F783C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShMa.Domain", "ShMa.Domain\ShMa.Domain.csproj", "{48A6D905-F37B-4CEC-998D-41545730EE5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShMa.Domain", "ShMa.Domain\ShMa.Domain.csproj", "{48A6D905-F37B-4CEC-998D-41545730EE5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShMa.Infrastructure.EfCore", "ShMa.Infrastructure.EfCore\ShMa.Infrastructure.EfCore.csproj", "{57D27DDA-37B1-4867-9274-C2A37E3C0BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShMa.Infrastructure.EfCore", "ShMa.Infrastructure.EfCore\ShMa.Infrastructure.EfCore.csproj", "{57D27DDA-37B1-4867-9274-C2A37E3C0BC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShMa.Application.Contracts", "ShMa.Application.Contracts\ShMa.Application.Contracts.csproj", "{3459C36E-735D-47C4-81F3-D009CA03C25D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShMa.Application.Contracts", "ShMa.Application.Contracts\ShMa.Application.Contracts.csproj", "{3459C36E-735D-47C4-81F3-D009CA03C25D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShMa.Application", "ShMa.Application\ShMa.Application.csproj", "{B64DC050-C176-4332-BD31-E9B371E10404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShMa.Application", "ShMa.Application\ShMa.Application.csproj", "{B64DC050-C176-4332-BD31-E9B371E10404}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShMa.Application", "ShMa.Application", "{AEA17191-134C-43DB-8D63-3E23F81DF689}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShMa.Domain", "ShMa.Domain", "{87657D71-2FE2-46B4-8516-BE6E1F168518}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShMa.Infrastructure.EfCore", "ShMa.Infrastructure.EfCore", "{A41784B2-1B7E-4B2B-A374-476857EFB1C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShMa.Infrastructure.Management", "ShMa.Infrastructure.Management\ShMa.Infrastructure.Management.csproj", "{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServerHost\ServiceHost.csproj", "{405ABB79-5D51-4E94-B89B-9AFBC006949D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,14 @@ Global
 		{B64DC050-C176-4332-BD31-E9B371E10404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B64DC050-C176-4332-BD31-E9B371E10404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B64DC050-C176-4332-BD31-E9B371E10404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +71,7 @@ Global
 		{AEA17191-134C-43DB-8D63-3E23F81DF689} = {43181434-05AF-4FC8-9FDC-D5D42AA16DB2}
 		{87657D71-2FE2-46B4-8516-BE6E1F168518} = {43181434-05AF-4FC8-9FDC-D5D42AA16DB2}
 		{A41784B2-1B7E-4B2B-A374-476857EFB1C9} = {43181434-05AF-4FC8-9FDC-D5D42AA16DB2}
+		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD} = {A41784B2-1B7E-4B2B-A374-476857EFB1C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67D96C0A-65D1-495B-B24A-E2F6E85702FE}
