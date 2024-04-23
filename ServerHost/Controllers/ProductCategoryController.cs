@@ -1,6 +1,6 @@
 ﻿using FrameWork.Application;
 using Microsoft.AspNetCore.Mvc;
-using ShMa.Application.Contracts;
+using ShMa.Application.Contracts.ProductCategories;
 
 namespace ServerHost.Controllers
 {

@@ -1,9 +1,9 @@
 ﻿using FrameWork.Application;
-using ShMa.Application.Contracts;
+using ShMa.Application.Contracts.ProductCategories;
 using ShMa.Domain.ProductCategoryAgg;
 using System.Linq.Expressions;
 
-namespace ShMa.Application
+namespace ShMa.Application.ProductCategori
 {
     public class ProductCategoryApplication : IProductCategoryApplication
     {
@@ -17,9 +17,9 @@ namespace ShMa.Application
         public OperationResult Create(CreateProductCategory command)
         {
             var operation = new OperationResult();
-            if(_productCategoryRepository.Exists(x=> x.Name == command.Name))
+            if (_productCategoryRepository.Exists(x => x.Name == command.Name))
             {
-                operation.Failed("خطا - نام تکراری وارد شده است. لطقا نام را صحیح وارد نمایید");
+                operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
             operation.Succesfull();
 
@@ -35,14 +35,15 @@ namespace ShMa.Application
             var operation = new OperationResult();
             var edit = _productCategoryRepository.GetBy(command.Id);
             if (edit == null)
-            { operation.Failed("خطا - رکورد موردنظر یافت نشد. دوباره تلاش کنید");
+            {
+                operation.Failed("خطا - رکورد موردنظر یافت نشد. دوباره تلاش کنید");
             }
 
             if (_productCategoryRepository.Exists(x => x.Id != command.Id && x.Name == command.Name))
             {
                 operation.Failed("نام رکورد تکراری می باشد.لطفا مجدد تلاش کنید");
             }
-            
+
             edit.Edit(command.Name, command.Description, command.Image, command.ImageTitle,
                 command.ImageAlt, command.KeyWord, command.MetaDescription, command.Slug);
             _productCategoryRepository.Save();
@@ -52,7 +53,7 @@ namespace ShMa.Application
 
         public EditProductCategory GetDetails(long id)
         {
-           return _productCategoryRepository.GetDetails(id);
+            return _productCategoryRepository.GetDetails(id);
         }
 
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)

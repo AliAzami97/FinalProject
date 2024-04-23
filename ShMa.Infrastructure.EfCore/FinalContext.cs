@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShMa.Domain.ProductAgg;
 using ShMa.Domain.ProductCategoryAgg;
 using ShMa.Infrastructure.EfCore.Mapping;
 
@@ -7,6 +8,7 @@ namespace ShMa.Infrastructure.EfCore
     public class FinalContext : DbContext
     {
         public DbSet<ProductCategory> productCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         public FinalContext(DbContextOptions<FinalContext> options) : base(options) 
         {
@@ -14,7 +16,7 @@ namespace ShMa.Infrastructure.EfCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assembly = typeof(FinalContext).Assembly;
+            var assembly = typeof(ProductCategoryMapping).Assembly;
             modelBuilder.ApplyConfigurationsFromAssembly(assembly);
             
             base.OnModelCreating(modelBuilder);

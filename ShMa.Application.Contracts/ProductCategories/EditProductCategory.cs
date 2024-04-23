@@ -1,4 +1,4 @@
-﻿namespace ShMa.Application.Contracts
+﻿namespace ShMa.Application.Contracts.ProductCategories
 {
     public class EditProductCategory : CreateProductCategory
     {

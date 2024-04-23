@@ -1,4 +1,5 @@
 ﻿using FrameWork.Domain;
+using ShMa.Domain.ProductAgg;
 
 namespace ShMa.Domain.ProductCategoryAgg
 {
@@ -12,6 +13,7 @@ namespace ShMa.Domain.ProductCategoryAgg
         public string KeyWord { get; private set; }
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
+        public ICollection<Product> Productsz { get; set; }
 
         public ProductCategory(string name, string description, string image, string imageTitle, string imageAlt, string keyWord, string metaDescription, string slug)
         {
@@ -23,6 +25,7 @@ namespace ShMa.Domain.ProductCategoryAgg
             KeyWord = keyWord;
             MetaDescription = metaDescription;
             Slug = slug;
+            Productsz = new List<Product>();
         }
 
         public void Edit(string name, string description, string image, string imageTitle, string imageAlt, string keyWord, string metaDescription, string slug)

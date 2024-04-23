@@ -1,5 +1,5 @@
 ﻿using FrameWork.Infrastructure;
-using ShMa.Application.Contracts;
+using ShMa.Application.Contracts.ProductCategories;
 using ShMa.Domain.ProductCategoryAgg;
 using System.Linq.Expressions;
 

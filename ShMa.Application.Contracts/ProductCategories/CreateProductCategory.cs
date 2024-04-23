@@ -1,12 +1,12 @@
 ﻿using FrameWork.Application;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShMa.Application.Contracts
+namespace ShMa.Application.Contracts.ProductCategories
 {
     public class CreateProductCategory
     {
 
-        [Required (ErrorMessage = ValidationMessages.IsRequired)]
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }

@@ -19,6 +19,8 @@ namespace ShMa.Infrastructure.EfCore.Mapping
             builder.Property(x => x.KeyWord).HasMaxLength(80).IsRequired();
             builder.Property(x => x.MetaDescription).HasMaxLength(150).IsRequired();
             builder.Property(x => x.Slug).HasMaxLength(300).IsRequired();
+
+            builder.HasMany(x => x.Productsz).WithOne(x => x.Category).HasForeignKey(x => x.CategoryId);
         }
     }
 }
