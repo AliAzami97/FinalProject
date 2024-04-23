@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShMa.Infrastructure.EfCore"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShMa.Infrastructure.Management", "ShMa.Infrastructure.Management\ShMa.Infrastructure.Management.csproj", "{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServerHost\ServiceHost.csproj", "{405ABB79-5D51-4E94-B89B-9AFBC006949D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerHost", "ServerHost\ServerHost.csproj", "{43212B2B-C779-44FD-B8F6-1A0BF658DD0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +55,10 @@ Global
 		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF3C7DF-B032-4F7F-A56F-1204B3F37FAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{405ABB79-5D51-4E94-B89B-9AFBC006949D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43212B2B-C779-44FD-B8F6-1A0BF658DD0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43212B2B-C779-44FD-B8F6-1A0BF658DD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43212B2B-C779-44FD-B8F6-1A0BF658DD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43212B2B-C779-44FD-B8F6-1A0BF658DD0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
