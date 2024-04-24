@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ShMa.Application.Contracts.ProductCategories;
+using ShMa.Application.Contracts.ProductPictures;
 using ShMa.Application.Contracts.Products;
 using ShMa.Application.ProductApp;
 using ShMa.Application.ProductCategori;
+using ShMa.Application.ProductPictureApplication;
 using ShMa.Domain.ProductAgg;
 using ShMa.Domain.ProductCategoryAgg;
+using ShMa.Domain.ProductPictureAgg;
 using ShMa.Infrastructure.EfCore;
 using ShMa.Infrastructure.EfCore.Repositories;
 
@@ -20,6 +23,9 @@ namespace ShMa.Infrastructure.Management
 
             services.AddTransient<IProductApplication, ProductApplication>();
             services.AddTransient<IProductRepository, ProductRepository>();
+
+            services.AddTransient<IProductPictureApplication, ProductPictureApplication>();
+            services.AddTransient<IProductPictureRepository, ProductPictureRepository>();
 
             services.AddDbContext<FinalContext>(x=> x.UseSqlServer(connectionstring));
             

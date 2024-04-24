@@ -1,8 +1,6 @@
 ﻿using FrameWork.Application;
 using ShMa.Application.Contracts.Products;
 using ShMa.Domain.ProductAgg;
-using System.Linq.Expressions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ShMa.Application.ProductApp
 {
@@ -20,7 +18,7 @@ namespace ShMa.Application.ProductApp
             var operation = new OperationResult();
             if (_productRepository.Exists(x => x.Name == command.Name))
             {
-                operation.Failed(ApplicationMessages.DuplicatedRecord);
+               return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
 
             var create1 = new Product(command.Name, command.Code, command.Image, command.ImageTitle, command.ImageAlt,
@@ -90,5 +88,6 @@ namespace ShMa.Application.ProductApp
         {
            return _productRepository.Search(searchModel);
         }
+
     }
 }

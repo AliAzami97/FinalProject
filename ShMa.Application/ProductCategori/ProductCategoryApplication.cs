@@ -21,7 +21,6 @@ namespace ShMa.Application.ProductCategori
             {
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
-            operation.Succesfull();
 
             var create = new ProductCategory(command.Name, command.Description, command.Image, command.ImageTitle,
                 command.KeyWord, command.ImageAlt, command.MetaDescription, command.Slug);

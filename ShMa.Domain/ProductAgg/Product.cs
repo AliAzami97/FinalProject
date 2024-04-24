@@ -1,5 +1,6 @@
 ﻿using FrameWork.Domain;
 using ShMa.Domain.ProductCategoryAgg;
+using ShMa.Domain.ProductPictureAgg;
 
 namespace ShMa.Domain.ProductAgg
 {
@@ -19,6 +20,7 @@ namespace ShMa.Domain.ProductAgg
         public string Slug { get; private set; }
         public double UnitPrice { get; private set; }
         public bool IsInStock { get; private set; }
+        public ICollection<ProductPicture> ProductPictures { get; private set; }
 
         public Product(string name, string code, string image, string imageTitle, string imageAlt, long categoryId, string metaDescription, string shortDescription, string description, string keyword, string slug, double unitPrice)
         {

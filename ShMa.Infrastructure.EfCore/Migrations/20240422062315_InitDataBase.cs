@@ -25,7 +25,7 @@ namespace ShMa.Infrastructure.EfCore.Migrations
                     KeyWord = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
                     MetaDescription = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     Slug = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
