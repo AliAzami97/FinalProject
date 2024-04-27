@@ -14,6 +14,5 @@
         public string Keyword { get; set; }
         public string Slug { get; set; }
         public double UnitPrice { get; set; }
-
     }
 }

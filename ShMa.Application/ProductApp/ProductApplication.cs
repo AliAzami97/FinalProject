@@ -56,32 +56,36 @@ namespace ShMa.Application.ProductApp
             return _productRepository.GetDetails(id);
         }
 
-        public OperationResult InStock(long id)
+        public void Delete(long id)
         {
-            var operation = new OperationResult();
-            var result = _productRepository.GetBy(id);
-            if (result == null)
-            {
-                operation.Failed(ApplicationMessages.RecordNotFound);
-            }
+            //var operation = new OperationResult();
+            //var result = _productRepository.GetBy(id);
+            //if (result == null)
+            //{
+            //    operation.Failed(ApplicationMessages.RecordNotFound);
+            //}
 
-            result.InStock();
+            //result.InStock();
+            //_productRepository.Save();
+            var delete = _productRepository.GetBy(id);
+            delete.NotInStock();
             _productRepository.Save();
-            return operation.Succesfull();
         }
 
-        public OperationResult NotInStock(long id)
+        public void UnDelete(long id)
         {
-            var operation = new OperationResult();
-            var result = _productRepository.GetBy(id);
-            if (result == null)
-            {
-                operation.Failed(ApplicationMessages.RecordNotFound);
-            }
+            //var operation = new OperationResult();
+            //var result = _productRepository.GetBy(id);
+            //if (result == null)
+            //{
+            //    operation.Failed(ApplicationMessages.RecordNotFound);
+            //}
 
-            result.NotInStock();
+            //result.NotInStock();
+            //_productRepository.Save();
+            var undelete = _productRepository.GetBy(id);
+            undelete.InStock();
             _productRepository.Save();
-            return operation.Succesfull();
         }
 
         public List<ProductViewModel> Search(ProductSearchModel searchModel)

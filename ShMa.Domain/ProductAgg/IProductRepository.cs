@@ -1,4 +1,6 @@
-﻿using FrameWork.Domain;
+﻿using FrameWork.Application;
+using FrameWork.Domain;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using ShMa.Application.Contracts.Products;
 
 namespace ShMa.Domain.ProductAgg

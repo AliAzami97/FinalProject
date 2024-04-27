@@ -19,7 +19,7 @@ namespace ShMa.Domain.ProductAgg
         public string Keyword { get; private set; }
         public string Slug { get; private set; }
         public double UnitPrice { get; private set; }
-        public bool IsInStock { get; private set; }
+        public bool IsInStock { get; set; }
         public ICollection<ProductPicture> ProductPictures { get; private set; }
 
         public Product(string name, string code, string image, string imageTitle, string imageAlt, long categoryId, string metaDescription, string shortDescription, string description, string keyword, string slug, double unitPrice)
@@ -39,7 +39,8 @@ namespace ShMa.Domain.ProductAgg
             IsInStock = true;
         }
 
-        public void Edit(string name, string code, string image, string imageTitle, string imageAlt, long categoryId, string metaDescription, string shortDescription, string description, string keyword, string slug, double unitPrice)
+        public void Edit(string name, string code, string image, string imageTitle, string imageAlt, long categoryId, string metaDescription, string shortDescription, string description, 
+            string keyword, string slug, double unitPrice)
         {
             Name = name;
             Code = code;
@@ -64,5 +65,6 @@ namespace ShMa.Domain.ProductAgg
         {
             IsInStock = false;
         }
+
     }
 }

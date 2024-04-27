@@ -7,8 +7,8 @@ namespace ShMa.Application.Contracts.Products
     {
         OperationResult Create(CreateProduct command);
         OperationResult Edit(EditProduct command);
-        OperationResult InStock(long id);
-        OperationResult NotInStock(long id);
+        void Delete(long id);
+        void UnDelete(long id);
         List<ProductViewModel> Search(ProductSearchModel searchModel);
         EditProduct GetDetails(long id);
     }

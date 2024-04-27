@@ -1,8 +1,11 @@
-﻿using FrameWork.Application;
+﻿using Azure;
+using FrameWork.Application;
 using Microsoft.AspNetCore.Mvc;
 using ShMa.Application.Contracts.ProductCategories;
 using ShMa.Application.Contracts.Products;
+using ShMa.Application.ProductApp;
 using ShMa.Domain.ProductAgg;
+using ShMa.Infrastructure.EfCore.Repositories;
 
 namespace ServerHost.Controllers
 {
@@ -12,12 +15,10 @@ namespace ServerHost.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly IProductApplication _productApplication;
-        public ProductController(IProductApplication productApplication, IProductRepository productRepository)
+        public ProductController(IProductApplication productApplication)
         {
             _productApplication = productApplication;
-            _productRepository = productRepository;
         }
-
 
         [HttpPost]
         public async Task<OperationResult> Create(CreateProduct command)
@@ -34,20 +35,19 @@ namespace ServerHost.Controllers
         [HttpGet]
         public EditProduct GetDetails(long id)
         {
-           return _productApplication.GetDetails(id);
+            return _productApplication.GetDetails(id);
         }
 
-        [HttpDelete]
-        public IActionResult NotInStock(long id)
+        [HttpPut(template: "OnPostUnDelete")]
+        public void OnPostUnDelete(long id)
         {
-            var operation = _productRepository.GetBy(id);
-            if (operation.IsInStock == true)
-                operation.InStock();
+            _productApplication.UnDelete(id);
+        }
 
-            else
-                operation.NotInStock();
-            return RedirectToPage("./Index");
-
+        [HttpPut(template: "OnPostDelete")]
+        public void OnPostDelete(long id)
+        {
+            _productApplication.Delete(id);
         }
     }
 }
