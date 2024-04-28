@@ -2,6 +2,7 @@
 using ShMa.Domain.ProductAgg;
 using ShMa.Domain.ProductCategoryAgg;
 using ShMa.Domain.ProductPictureAgg;
+using ShMa.Domain.SliderAgg;
 using ShMa.Infrastructure.EfCore.Mapping;
 
 namespace ShMa.Infrastructure.EfCore
@@ -11,6 +12,7 @@ namespace ShMa.Infrastructure.EfCore
         public DbSet<ProductCategory> productCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPicture> ProductPictures { get; set; }
+        public DbSet<Slide> Slides { get; set; }
 
         public FinalContext(DbContextOptions<FinalContext> options) : base(options) 
         {
