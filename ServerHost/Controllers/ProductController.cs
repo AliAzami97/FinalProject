@@ -1,11 +1,6 @@
-﻿using Azure;
-using FrameWork.Application;
+﻿using FrameWork.Application;
 using Microsoft.AspNetCore.Mvc;
-using ShMa.Application.Contracts.ProductCategories;
 using ShMa.Application.Contracts.Products;
-using ShMa.Application.ProductApp;
-using ShMa.Domain.ProductAgg;
-using ShMa.Infrastructure.EfCore.Repositories;
 
 namespace ServerHost.Controllers
 {
@@ -13,7 +8,6 @@ namespace ServerHost.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
         private readonly IProductApplication _productApplication;
         public ProductController(IProductApplication productApplication)
         {
@@ -32,11 +26,18 @@ namespace ServerHost.Controllers
             return _productApplication.Edit(command);
         }
 
-        [HttpGet]
+        [HttpGet(template: "GetDetails")]
         public EditProduct GetDetails(long id)
         {
             return _productApplication.GetDetails(id);
         }
+
+        [HttpGet(template: "Search")]
+        public List<ProductViewModel> Search([FromQuery] ProductSearchModel searchModel)
+        {
+            return _productApplication.Search(searchModel);
+        }
+
 
         [HttpPut(template: "OnPostUnDelete")]
         public void OnPostUnDelete(long id)

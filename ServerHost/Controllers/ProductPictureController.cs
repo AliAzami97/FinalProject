@@ -1,11 +1,6 @@
-﻿using Azure;
-using FrameWork.Application;
+﻿using FrameWork.Application;
 using Microsoft.AspNetCore.Mvc;
-using ShMa.Application.Contracts.ProductCategories;
-using ShMa.Application.Contracts.Products;
-using ShMa.Application.ProductApp;
-using ShMa.Domain.ProductAgg;
-using ShMa.Infrastructure.EfCore.Repositories;
+using ShMa.Application.Contracts.ProductPictures;
 
 namespace ServerHost.Controllers
 {
@@ -13,41 +8,47 @@ namespace ServerHost.Controllers
     [ApiController]
     public class ProductPictureController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
-        private readonly IProductApplication _productApplication;
-        public ProductPictureController(IProductApplication productApplication)
+        private readonly IProductPictureApplication _productPictureApplication;
+
+        public ProductPictureController(IProductPictureApplication productPictureApplication)
         {
-            _productApplication = productApplication;
+            _productPictureApplication = productPictureApplication;
         }
 
         [HttpPost]
-        public async Task<OperationResult> Create(CreateProduct command)
+        public OperationResult Create(CreateProductPicture command)
         {
-            return _productApplication.Create(command);
+            return _productPictureApplication.Create(command);
         }
 
         [HttpPut]
-        public async Task<OperationResult> Edit(EditProduct command)
+        public OperationResult Edit(EditProductPicture command)
         {
-            return _productApplication.Edit(command);
+            return _productPictureApplication.Edit(command);
         }
 
-        [HttpGet]
-        public EditProduct GetDetails(long id)
+        [HttpPut(template: "UnDelete")]
+        public OperationResult UnDelete(long id)
         {
-            return _productApplication.GetDetails(id);
+            return _productPictureApplication.Restore(id); 
         }
 
-        [HttpPut(template: "OnPostUnDelete")]
-        public void OnPostUnDelete(long id)
+        [HttpPut(template: "Delete")]
+        public OperationResult Delete(long id)
         {
-            _productApplication.UnDelete(id);
+            return _productPictureApplication.Remove(id);
         }
 
-        [HttpPut(template: "OnPostDelete")]
-        public void OnPostDelete(long id)
+        [HttpGet(template: "Search")]
+        public List<ProductPictureViewModel> Search([FromQuery]ProductPictureSearchModel searchModel)
         {
-            _productApplication.Delete(id);
+            return _productPictureApplication.Search(searchModel);
+        }
+
+        [HttpGet(template: "GetDetails")]
+        public EditProductPicture GetDetails(long id)
+        {
+            return _productPictureApplication.GetDetails(id);
         }
     }
 }

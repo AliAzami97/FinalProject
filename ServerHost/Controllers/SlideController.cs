@@ -3,6 +3,7 @@ using FrameWork.Application;
 using Microsoft.AspNetCore.Mvc;
 using ShMa.Application.Contracts.ProductCategories;
 using ShMa.Application.Contracts.Products;
+using ShMa.Application.Contracts.Slides;
 using ShMa.Application.ProductApp;
 using ShMa.Domain.ProductAgg;
 using ShMa.Infrastructure.EfCore.Repositories;
@@ -13,41 +14,46 @@ namespace ServerHost.Controllers
     [ApiController]
     public class SlideController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
-        private readonly IProductApplication _productApplication;
-        public SlideController(IProductApplication productApplication)
+        private readonly ISlideApplication _slideApplication;
+        public SlideController(ISlideApplication slideApplication)
         {
-            _productApplication = productApplication;
+            _slideApplication = slideApplication;
         }
 
         [HttpPost]
-        public async Task<OperationResult> Create(CreateProduct command)
+        public OperationResult Create(CreateSlide command)
         {
-            return _productApplication.Create(command);
+            return _slideApplication.Create(command);
         }
 
         [HttpPut]
-        public async Task<OperationResult> Edit(EditProduct command)
+        public  OperationResult Edit(EditSlide command)
         {
-            return _productApplication.Edit(command);
+            return _slideApplication.Edit(command);
         }
 
-        [HttpGet]
-        public EditProduct GetDetails(long id)
+        [HttpGet(template: "GetDetails")]
+        public EditSlide GetDetails(long id)
         {
-            return _productApplication.GetDetails(id);
+            return _slideApplication.GetDetails(id);
         }
 
-        [HttpPut(template: "OnPostUnDelete")]
-        public void OnPostUnDelete(long id)
+        [HttpPut(template: "Remove")]
+        public OperationResult Remove(long id)
         {
-            _productApplication.UnDelete(id);
+           return _slideApplication.Remove(id);
         }
 
-        [HttpPut(template: "OnPostDelete")]
-        public void OnPostDelete(long id)
+        [HttpPut(template: "Restore")]
+        public OperationResult Restore(long id)
         {
-            _productApplication.Delete(id);
+           return _slideApplication.ReStore(id);
+        }
+
+        [HttpGet(template: "GetList")]
+        public List<SlideViewModel> GetList()
+        {
+            return _slideApplication.GetList();
         }
     }
 }
