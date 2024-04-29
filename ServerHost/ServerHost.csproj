@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dm. Infrastructure Management\Dm. Infrastructure Management.csproj" />
     <ProjectReference Include="..\ShMa.Application.Contracts\ShMa.Application.Contracts.csproj" />
     <ProjectReference Include="..\ShMa.Infrastructure.Management\ShMa.Infrastructure.Management.csproj" />
   </ItemGroup>

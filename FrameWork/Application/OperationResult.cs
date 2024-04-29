@@ -22,12 +22,5 @@
             Message = message;
             return this;
         }
-
-        public OperationResult Successed(string message = "عملیات با موفقیت انجام شد")
-        {
-            IsSucceeded = true;
-            Message = message;
-            return this;
-        }
     }
 }

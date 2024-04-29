@@ -6,7 +6,7 @@ namespace ServerHost.Controllers
 {
     //[Route("[controller]")]
     //[ApiController]
-    //public class ProductCategoryController : ControllerBase
+    //public class ProductCategoryController  : ControllerBase
     //{
     //    private readonly IProductCategoryApplication _productCategoryApplication;
     //    public ProductCategoryController(IProductCategoryApplication productCategoryApplication)

@@ -1,3 +1,4 @@
+using Dm._Infrastructure_Management;
 using ShMa.Infrastructure.Management;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("FinalProjectDb");
 FinalBootstrapper.Configure(builder.Services, connectionString);
+DiscountBootstrapper.Configure(builder.Services, connectionString);
 
 
 var app = builder.Build();

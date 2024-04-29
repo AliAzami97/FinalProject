@@ -36,6 +36,7 @@ namespace ShMa.Infrastructure.EfCore.Repositories
               Picture = x.Picture,
               Heading= x.Heading,
               Title= x.Title,
+              IsRemoved = x.IsRemoved,
             }).OrderByDescending(x=> x.Id).ToList();
         }
     }

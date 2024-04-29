@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Dm._Infrastructure_Management</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DM. Application\DM. Application.csproj" />
+    <ProjectReference Include="..\Dm. Domain\Dm. Domain.csproj" />
+    <ProjectReference Include="..\Dm. Infrastructure\Dm. Infrastructure EfCore.csproj" />
+  </ItemGroup>
+
+</Project>

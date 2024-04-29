@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Dm._Infrastructure</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dm. Domain\Dm. Domain.csproj" />
+    <ProjectReference Include="..\FrameWork\FrameWork.csproj" />
+    <ProjectReference Include="..\ShMa.Infrastructure.EfCore\ShMa.Infrastructure.EfCore.csproj" />
+  </ItemGroup>
+
+</Project>
