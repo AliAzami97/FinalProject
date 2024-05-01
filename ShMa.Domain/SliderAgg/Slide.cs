@@ -13,7 +13,6 @@ namespace ShMa.Domain.SliderAgg
         public string Text { get; private set; }
         public string BtnText { get; private set; }
         public bool IsRemoved { get; private set; }
-        public ProductPicture Images { get; set; }
 
         public Slide(string picture, string pictureAlt, string pictureTitle, string heading, string title, string text, string btnText)
         {

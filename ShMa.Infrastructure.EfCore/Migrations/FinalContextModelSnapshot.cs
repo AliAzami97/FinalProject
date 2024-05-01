@@ -89,6 +89,7 @@ namespace ShMa.Infrastructure.EfCore.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<double>("UnitPrice")
+                        .HasMaxLength(50)
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -184,6 +185,7 @@ namespace ShMa.Infrastructure.EfCore.Migrations
                         .HasColumnType("bit");
 
                     b.Property<long>("ProductId")
+                        .HasMaxLength(100)
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -196,7 +198,10 @@ namespace ShMa.Infrastructure.EfCore.Migrations
             modelBuilder.Entity("ShMa.Domain.SliderAgg.Slide", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("BtnText")
                         .IsRequired()
@@ -266,17 +271,6 @@ namespace ShMa.Infrastructure.EfCore.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("ShMa.Domain.SliderAgg.Slide", b =>
-                {
-                    b.HasOne("ShMa.Domain.ProductPictureAgg.ProductPicture", "Images")
-                        .WithMany("Slides")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Images");
-                });
-
             modelBuilder.Entity("ShMa.Domain.ProductAgg.Product", b =>
                 {
                     b.Navigation("ProductPictures");
@@ -285,11 +279,6 @@ namespace ShMa.Infrastructure.EfCore.Migrations
             modelBuilder.Entity("ShMa.Domain.ProductCategoryAgg.ProductCategory", b =>
                 {
                     b.Navigation("Productsz");
-                });
-
-            modelBuilder.Entity("ShMa.Domain.ProductPictureAgg.ProductPicture", b =>
-                {
-                    b.Navigation("Slides");
                 });
 #pragma warning restore 612, 618
         }

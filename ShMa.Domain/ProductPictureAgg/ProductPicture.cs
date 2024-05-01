@@ -12,7 +12,6 @@ namespace ShMa.Domain.ProductPictureAgg
         public string ImageAlt  { get; private set; }
         public bool IsRemoved { get; private set; }
         public Product Product { get; private set; }
-        public ICollection<Slide> Slides { get; set; }
 
         public ProductPicture(long productId, string image, string imageTitle, string imageAlt)
         {

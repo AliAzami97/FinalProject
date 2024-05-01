@@ -50,14 +50,12 @@ namespace Dm._Infrastructure.Repositories
 
             if (!string.IsNullOrWhiteSpace(searchModel.StartDate))
             {
-                var startDate = DateTime.Now;
-                query = query.Where(x => x.StartDatePr > startDate);
+                query = query.Where(x => x.StartDatePr == searchModel.StartDate);
             }
 
             if (!string.IsNullOrWhiteSpace(searchModel.EndDate))
             {
-                var EndDate = DateTime.Now;
-                query = query.Where(x => x.EndDatePr < EndDate);
+                query = query.Where(x => x.EndDate == searchModel.EndDate);
             }
 
             var discount = query.OrderByDescending(x => x.Id).ToList();

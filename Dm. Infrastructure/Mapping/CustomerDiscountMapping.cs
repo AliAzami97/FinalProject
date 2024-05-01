@@ -8,7 +8,7 @@ namespace Dm._Infrastructure.Mapping
     {
         public void Configure(EntityTypeBuilder<CustomerDiscount> builder)
         {
-            builder.ToTable("Discounts");
+            builder.ToTable("CustomerDiscounts");
             builder.HasKey(x=> x.Id);
 
             builder.Property(x=> x.ProdutId);

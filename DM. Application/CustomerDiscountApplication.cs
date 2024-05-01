@@ -23,10 +23,9 @@ namespace DM._Application
             {
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
-            //var create = new CustomerDiscount(command.ProdutId, command.DiscountRate, /*command.StartDate.ToString()*/
-                /*command.EndDate*//* command.Reason);*/
+            var create = new CustomerDiscount(command.ProdutId, command.DiscountRate, command.StartDate,command.EndDate, command.Reason);
 
-            //_discountRepository.Create(create);
+            _discountRepository.Create(create);
             _discountRepository.Save();
                 return operation.Succesfull();
         }
@@ -44,7 +43,7 @@ namespace DM._Application
             {
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
-            //edit.Edit(command.ProdutId, command.DiscountRate, command.StartDate, command.EndDate, command.Reason);
+            edit.Edit(command.ProdutId, command.DiscountRate, command.StartDate, command.EndDate, command.Reason);
             _discountRepository.Save();
             return operation.Succesfull();
 

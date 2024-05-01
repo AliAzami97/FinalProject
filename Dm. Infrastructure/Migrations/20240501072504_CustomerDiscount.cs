@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Dm._Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDataBase : Migration
+    public partial class CustomerDiscount : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,14 +19,30 @@ namespace Dm._Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProdutId = table.Column<long>(type: "bigint", nullable: false),
                     DiscountRate = table.Column<int>(type: "int", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EndDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Reason = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerDiscounts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Discounts",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<long>(type: "bigint", nullable: false),
+                    DiscountRate = table.Column<int>(type: "int", nullable: false),
+                    IsRemoved = table.Column<bool>(type: "bit", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Discounts", x => x.Id);
                 });
         }
 
@@ -35,6 +51,9 @@ namespace Dm._Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "CustomerDiscounts");
+
+            migrationBuilder.DropTable(
+                name: "Discounts");
         }
     }
 }

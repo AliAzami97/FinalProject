@@ -44,7 +44,7 @@ namespace Dm._Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ColleagueDiscounts");
+                    b.ToTable("Discounts", (string)null);
                 });
 
             modelBuilder.Entity("Dm._Domain.DiscountAgg.CustomerDiscount", b =>
@@ -61,8 +61,9 @@ namespace Dm._Infrastructure.Migrations
                     b.Property<int>("DiscountRate")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("EndDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("ProdutId")
                         .HasColumnType("bigint");
@@ -71,12 +72,13 @@ namespace Dm._Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("StartDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("CustomerDiscounts");
+                    b.ToTable("CustomerDiscounts", (string)null);
                 });
 #pragma warning restore 612, 618
         }

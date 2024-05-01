@@ -19,7 +19,6 @@ namespace ShMa.Infrastructure.EfCore.Mapping
             builder.Property(x => x.Text).HasMaxLength(255);
             builder.Property(x => x.BtnText).HasMaxLength(50).IsRequired();
 
-            builder.HasOne(x=> x.Images).WithMany(x=> x.Slides).HasForeignKey(x=> x.Id);
         }
     }
 }
